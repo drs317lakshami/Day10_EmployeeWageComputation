@@ -1,12 +1,14 @@
 package com.bridgelabz.day10;
 
-
-public class EmpWageComputation {
-
-	public static void main(String[] args) {
-		System.out.println("Welcome to Employee Wage Computation Program");
-		Employee emp = new Employee();
-		String str = emp.employeeAttendance();
-		System.out.println(str);
+class Employee {
+	public String employeeAttendance() {
+		Random random = new Random();
+		int randomNum = random.nextInt(3);
+		String result = switch (randomNum) {
+		case 0 -> "Employee is present part time";
+		case 1 -> "Employee is present full time";
+		default -> "Employee is absent";
+		};
+		return result;
 	}
 }
